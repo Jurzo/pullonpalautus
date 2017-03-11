@@ -27,6 +27,8 @@ int main (void){
 		printf("Valitse: ");
 		if (scanf("%d", &valinta) != 1){
 			printf("Virheellinen valinta\n");
+			while (getchar() != '\n') {}
+			continue;
 			}
 		if (valinta == 1){
 			printf("\nSyötä uusi pullo tai tölkki.\n");
