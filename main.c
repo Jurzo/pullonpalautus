@@ -25,7 +25,8 @@ int main (void){
 		//valinnan tarkkailu
 		
 		printf("Valitse: ");
-		scanf("%d", &valinta);
+		if (scanf("%d", &valinta) != 1){
+			printf("Virheellinen valinta");
 		if (valinta == 1){
 			printf("\nSyötä uusi pullo tai tölkki.\n");
 			//tölkien ja pullojen määrä tiedostosta tähän ja niiden pohjalta toinen valikko.
@@ -37,6 +38,7 @@ int main (void){
 		}
 		
 		else{
+			//virhe ilmoitus, jos on kokonaisluku
 			printf("Valitse 1 aloittaaksesi tai 0 lopettaaksesi\n");
 		}
 	}
