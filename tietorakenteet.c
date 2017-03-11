@@ -2,23 +2,19 @@
 #include <string.h>
 #include <stdio.h>
 
-struct tuote {
+typedef struct tuote {
 	float koko;
 	float arvo;
 	char *nimike;
 	struct tuote *pSeuraava;
-};
+} Tuote;
 
-struct palautus {
+typedef struct palautus {
 	char *aikaleima;
 	struct tuote *pTuote;
 	int maara;
 	struct palautus *pSeuraava;
-};
-
-typedef struct tuote Tuote;
-
-typedef struct palautus Palautus;
+} Palautus;
 
 int lisaaTuote(Tuote **alku, float tArvo, float tKoko, char *puskuri){
 	Tuote * uusi;
