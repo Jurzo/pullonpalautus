@@ -1,7 +1,8 @@
-#include "tietorakenteet.h"
-
 #include <stdio.h>
 #include <stdlib.h>
+
+#include "tietorakenteet.h"
+#include "tiedosto.h"
 
 int lueNimikkeet(char *tiedostonimi, Tuote **alku) {
 	char nimikePuskuri[32];
