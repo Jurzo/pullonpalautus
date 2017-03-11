@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+#include "tietorakenteet.h"
 
 typedef struct tuote {
 	float koko;
