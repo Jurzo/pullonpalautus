@@ -8,6 +8,7 @@
 #define true 1
 #define false 0
 
+//toinen valikko
 int valikko(void){
 
 	//Listan lukeminen
@@ -16,7 +17,7 @@ int valikko(void){
 	Tuote *tuoteiter = tuoteLista;
 	while (true){
 	
-		//tölkien ja pullojen määrä tiedostosta tähän ja niiden pohjalta toinen valikko.
+		//tölkien ja pullojen määrä tiedostosta ja niiden pohjalta toinen valikko.
 		int i = 1;
 		printf("\nSyötä uusi pullo tai tölkki.\n");
 		while (tuoteiter != NULL){
@@ -31,10 +32,11 @@ int valikko(void){
 
 int main (void){
 
+
 	int valinta;
 	while (true){
 	
-		//valikon tulostus
+		//ensimmäisen valikon tulostus
 		
 		printf("Pullonpalautusautomaatti\nAutomaatti on valmis ottamaan vastaan pullot ja tölkit.\n");
 		printf("1) Aloita palautus\n0) Lopeta\n");
