@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+#include "tietorakenteet.h"
 
 typedef struct tuote {
 	float koko;
@@ -75,6 +76,29 @@ int lisaaPalautus(Palautus **alku, Tuote *tuote, char *puskuri){
 	}
 }
 
+void vapautaTuotteet(Tuote *p){
+	Tuote *nykyinen;
+	Tuote *tilapainen = p;
+
+	while(tilapainen){
+		nykyinen = tilapainen;
+		tilapainen = nykyinen->pSeuraava;
+		free(nykyinen);
+	}
+}
+
+void vapautaPalautukset(Palautus *p){
+	Palautus *nykyinen;
+	Palautus *tilapainen = p;
+
+	while(tilapainen){
+		nykyinen = tilapainen;
+		tilapainen = nykyinen->pSeuraava;
+		free(nykyinen);
+	}
+}
+
+
 
 int main(){
 	char testi[10] = "moi";
@@ -95,6 +119,8 @@ int main(){
 		printf("jiihaa2\n");
 	}
 	printf("%s\n", alkuP->pSeuraava->aikaleima);
+	vapautaTuotteet(alku);
+	vapautaPalautukset(alkuP);
 }
 
 
