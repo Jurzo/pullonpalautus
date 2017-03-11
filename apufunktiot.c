@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include "apufunktiot.h"
 
-int aikaleimat(void){
+char *aikaleimat(void){
 	time_t current_time;
 	char* c_time_string;
 	
