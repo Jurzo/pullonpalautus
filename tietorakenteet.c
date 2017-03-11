@@ -2,23 +2,19 @@
 #include <string.h>
 #include <stdio.h>
 
-struct tuote {
+typedef struct tuote {
 	float koko;
 	float arvo;
 	char *nimike;
 	struct tuote *pSeuraava;
-};
+} Tuote;
 
-struct palautus {
+typedef struct palautus {
 	char *aikaleima;
 	struct tuote *pTuote;
 	int maara;
 	struct palautus *pSeuraava;
-};
-
-typedef struct tuote Tuote;
-
-typedef struct palautus Palautus;
+} Palautus;
 
 int lisaaTuote(Tuote **alku, float tArvo, float tKoko, char *puskuri){
 	Tuote * uusi;
@@ -28,8 +24,7 @@ int lisaaTuote(Tuote **alku, float tArvo, float tKoko, char *puskuri){
 		merkkeja = strlen(puskuri);
 
 		if(uusi->nimike = (char*)malloc((merkkeja+1)*sizeof(char))){
-			memset(uusi->nimike,0,merkkeja+1);
-			strncpy(uusi->nimike,puskuri,merkkeja);
+			strcpy(uusi->nimike,puskuri);
 			uusi->arvo = tArvo;
 			uusi->koko = tKoko;
 			uusi->pSeuraava = NULL;
@@ -72,8 +67,7 @@ int lisaaPalautus(Palautus **alku, Tuote *tuote, char *puskuri){
 			merkkeja = strlen(puskuri);
 			
 			if(uusi->aikaleima = (char*)malloc((merkkeja+1)*sizeof(char))){
-				memset(uusi->aikaleima,0,merkkeja+1);
-				strncpy(uusi->aikaleima,puskuri,merkkeja);
+				strcpy(uusi->aikaleima,puskuri);
 				uusi->maara = 1;
 				uusi->pTuote = tuote;
 				uusi->pSeuraava = NULL;
@@ -99,6 +93,9 @@ int main(){
 	};
 	if(lisaaPalautus(&alkuP, alku, testi)){
 		printf("jiihaa\n");
+	}
+	if(lisaaPalautus(&alkuP, alku, testi)){
+		printf("jiihaa2\n");
 	}
 	printf("%s\n", alkuP->aikaleima);
 }
