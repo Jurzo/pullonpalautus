@@ -8,7 +8,6 @@
 #define true 1
 #define false 0
 
-
 int valikko(void){
 
 	//Listan lukeminen
@@ -31,7 +30,6 @@ int valikko(void){
 	}
 
 int main (void){
-
 
 	int valinta;
 	while (true){
