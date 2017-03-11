@@ -1,5 +1,9 @@
-//Nimet: Mika Kopsa 0507014, Juuso Kalliomäki 0457960, Mikko Jutila 0447734
+/* Mika Kopsa 0507014, 
+   Juuso Kalliomäki 0457960, 
+   Mikko Jutila 0447734 */
 
+#ifndef TIETORAKENTEET_H
+#define TIETORAKENTEET_H
 typedef struct tuote {
 	float koko;
 	float arvo;
@@ -17,4 +21,6 @@ int lisaaTuote(Tuote **alku, float tArvo, float tKoko, char *puskuri);
 int lisaaPalautus(Palautus **alku, Tuote *tuote, char *puskuri);
 void vapautaTuotteet(Tuote *p);
 void vapautaPalautukset(Palautus *p);
+#endif
+
 /* eof */
