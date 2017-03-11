@@ -3,6 +3,7 @@
 #include <time.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include "apufunktiot.h"
 
 int aikaleimat(void){
 	time_t current_time;
