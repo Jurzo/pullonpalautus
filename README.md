@@ -1,1 +1,1 @@
-# pullonpalautus
+# pullonpalautusautomaatti
