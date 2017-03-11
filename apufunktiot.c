@@ -1,4 +1,4 @@
-//Nimet: Mika Kopsa 0507014, Juuso Kalliomäki 0457960, Mikko Jutila 0447734
+//Mika Kopsa 0507014, Juuso Kalliomäki 0457960, Mikko Jutila 0447734
 
 #include <time.h>
 #include <stdlib.h>
