@@ -21,7 +21,7 @@ int valikko(void){
 		//tölkien ja pullojen määrä tiedostosta tähän ja niiden pohjalta toinen valikko.
 		int i = 1;
 		printf("\nSyötä uusi pullo tai tölkki.\n");
-		while (){
+		while (true){
 			printf("%d) %s %fl", i, tuoteiter->nimike, tuoteiter->koko);//jotain
 			i++;
 			tuoteiter = tuoteiter->pSeuraava;
@@ -51,9 +51,9 @@ int main (void){
 			continue;
 			}
 		if (valinta == 1){
-			valikko(void);
+			valikko();
 		
-		else if(valinta == 0){
+		}else if(valinta == 0){
 			printf("Suljetaan pullonpalautusautomaatti.\n");
 			break;
 			}
