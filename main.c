@@ -14,7 +14,7 @@ int main (void){
 	Tuote *tuoteLista;
 	lueNimikkeet("tuotetiedosto.txt", &tuoteLista);
 
-	int choise;
+	int valinta;
 	while (true){
 	
 		//valikon tulostus
@@ -25,13 +25,13 @@ int main (void){
 		//valinnan tarkkailu
 		
 		printf("Valitse: ");
-		scanf("%d", &choise);
-		if (choise == 1){
+		scanf("%d", &valinta);
+		if (valinta == 1){
 			printf("\nSyötä uusi pullo tai tölkki.\n");
 			//tölkien ja pullojen määrä tiedostosta tähän ja niiden pohjalta toinen valikko.
 		}
 		
-		else if(choise == 0){
+		else if(valinta == 0){
 			printf("Suljetaan pullonpalautusautomaatti.\n");
 			break;
 		}
