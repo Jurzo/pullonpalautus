@@ -1,9 +1,9 @@
 //Nimet: Mika Kopsa 0507014, Juuso Kalliomäki 0457960, Mikko Jutila 0447734
 
 #include <stdio.h>
-//#include "tiedosto.h"
-//#include "tietorakenteet.h"
-//#include "apufunktiot.h"
+#include "tiedosto.h"
+#include "tietorakenteet.h"
+#include "apufunktiot.h"
 
 #define true 1
 #define false 0
