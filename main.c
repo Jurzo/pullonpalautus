@@ -51,8 +51,8 @@ int main (void){
 			}
 		if (valinta == 1){
 			valikko();
-		
-		}else if(valinta == 0){
+		}
+		else if(valinta == 0){
 			printf("Suljetaan pullonpalautusautomaatti.\n");
 			break;
 			}
