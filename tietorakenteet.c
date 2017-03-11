@@ -18,9 +18,9 @@ struct palautus {
 
 typedef struct tuote Tuote;
 
-typedef struct palautus Palautus, *palautusPointer;
+typedef struct palautus Palautus;
 
-int lisaaTuote(Tuote *alku, float tArvo, float tKoko, char *puskuri){
+int lisaaTuote(Tuote **alku, float tArvo, float tKoko, char *puskuri){
 	Tuote * uusi;
 	int merkkeja = 0;
 
@@ -34,11 +34,11 @@ int lisaaTuote(Tuote *alku, float tArvo, float tKoko, char *puskuri){
 			uusi->koko = tKoko;
 			uusi->pSeuraava = NULL;
 
-			if(alku == NULL){
-				alku = uusi;
-				printf("%p\n", alku);
+			if(*alku == NULL){
+				*alku = uusi;
+				printf("%f\n", uusi->koko);
 			}else{
-				Tuote * tilapainen = alku;
+				Tuote * tilapainen = *alku;
 				while(tilapainen->pSeuraava){
 					tilapainen = tilapainen->pSeuraava;
 				}
@@ -53,9 +53,9 @@ int lisaaTuote(Tuote *alku, float tArvo, float tKoko, char *puskuri){
 	}
 }
 
-int lisaaPalautus(Palautus *alku, Tuote *tuote, char *puskuri){
+int lisaaPalautus(Palautus **alku, Tuote *tuote, char *puskuri){
 	if(alku){
-		palautusPointer tilapainen = alku;
+		Palautus * tilapainen = *alku;
 		while(tilapainen){
 			if(tilapainen->pTuote == tuote){
 				tilapainen->maara += 1;
@@ -65,10 +65,10 @@ int lisaaPalautus(Palautus *alku, Tuote *tuote, char *puskuri){
 		}
 		return 0;
 	}else{
-		palautusPointer uusi;
+		Palautus * uusi;
 		int merkkeja = 0;
 
-		if(uusi = (palautusPointer)malloc(sizeof(Palautus))){
+		if(uusi = (Palautus *)malloc(sizeof(Palautus))){
 			merkkeja = strlen(puskuri);
 			
 			if(uusi->aikaleima = (char*)malloc((merkkeja+1)*sizeof(char))){
@@ -92,10 +92,10 @@ int main(){
 	char testi[10] = "moi";
 	Tuote *alku = NULL;
 	printf("%p\n", alku);
-	if(lisaaTuote(alku, 1.0, 2.0,testi)){
+	if(lisaaTuote(&alku, 1.0, 2.0,testi)){
 		printf("hei\n");
 	};
-	printf("%p\n", alku);
+	printf("%s\n", alku->nimike);
 }
 
 
