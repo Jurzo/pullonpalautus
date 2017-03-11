@@ -15,3 +15,4 @@ int lisaaTuote(Tuote **alku, float tArvo, float tKoko, char *puskuri);
 int lisaaPalautus(Palautus **alku, Tuote *tuote, char *puskuri);
 void vapautaTuotteet(Tuote *p);
 void vapautaPalautukset(Palautus *p);
+/* eof */
