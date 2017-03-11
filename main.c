@@ -24,8 +24,10 @@ int valikko(void){
 		while (){
 			printf("%d) %s %fl", i, tuoteiter->nimike, tuoteiter->koko);//jotain
 			i++;
+			tuoteiter = tuoteiter->pSeuraava;
 			}
-		printf("Lopeta syöttö ja tulosta kuitti.");
+		printf("%d) Lopeta syöttö ja tulosta kuitti.",i);
+		//kuitin tulostus
 		}
 	}
 
