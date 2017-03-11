@@ -19,7 +19,5 @@ char *aikaleimat(void){
 	if (c_time_string == NULL){
 		(void) fprintf(stderr, "Ajan muutos epäonnistui.\n");
 		}
-	return c_time_string;
-		
-	
+	return c_time_string;	
 }
