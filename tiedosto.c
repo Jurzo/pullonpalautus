@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 #include "tietorakenteet.h"
+#include "apufunktiot.h"
 #include "tiedosto.h"
 
 int lueNimikkeet(char *tiedostonimi, Tuote **alku) {
@@ -24,9 +25,24 @@ int lueNimikkeet(char *tiedostonimi, Tuote **alku) {
 int kirjoitaTilapainenLoki(char *tiedostonimi, Palautus *alku) {
 	FILE *tiedosto = fopen(tiedostonimi, "w");
 	while (alku != NULL) {
-		pTuote = alku->pTuote;
+		Tuote *pTuote = alku->pTuote;
 		fprintf(tiedosto, "%s:%s-%.2fl:%.2f€.\n", alku->aikaleima, pTuote->nimike, pTuote->koko, pTuote->arvo);
 		alku = alku->pSeuraava;
 	}
-	fclosse(tiedosto);
+	fclose(tiedosto);
+}
+
+int kirjoitaLoki(char *tiedostonimi, Palautus *alku) {
+	int palautustenLkm;
+	float panttienSumma;
+	Tuote *pTuote = alku->pTuote;
+	
+	while (alku != NULL) {
+		palautustenLkm++;
+		panttienSumma += pTuote->arvo;
+	}
+	
+	FILE *tiedosto = fopen(tiedostonimi, "a");
+	fprintf(tiedosto, "%s:%s - Palautukset %d kpl. Pantit %.2f€.\n", alku->aikaleima, pTuote->nimike, pTuote->koko, pTuote->arvo);
+	fclose(tiedosto);
 }
