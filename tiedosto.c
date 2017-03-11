@@ -19,3 +19,11 @@ int lueNimikkeet(char *tiedostonimi, Tuote **alku) {
 	fclose(tiedosto);
 	return 0;
 }
+
+int kirjoitaTilapainenLoki(char *tiedostonimi, Palautus *alku) {
+	FILE *tiedosto = fopen(tiedostonimi, "w");
+	while (alku != NULL) {
+		fprintf(tiedosto, "%s:%s-%.2fl:%.2f€.\n");
+	}
+	fclosse(tiedosto);
+}
