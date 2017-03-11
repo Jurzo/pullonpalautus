@@ -14,14 +14,16 @@ int valikko(void){
 	//Listan lukeminen
 	Tuote *tuoteLista;
 	lueNimikkeet("tuotetiedosto.txt", &tuoteLista);
+	Tuote *tuoteiter = tuoteLista;
 	
 	while (true){
 	
 		//tölkien ja pullojen määrä tiedostosta tähän ja niiden pohjalta toinen valikko.
-		int i;
+		int i = 1;
 		printf("\nSyötä uusi pullo tai tölkki.\n");
-		for (){
-			printf("%d) %s %fl", i, ?, ?);//jotain
+		while (){
+			printf("%d) %s %fl", i, tuoteiter->nimike, tuoteiter->koko);//jotain
+			i++;
 			}
 		printf("Lopeta syöttö ja tulosta kuitti.");
 		}
