@@ -15,13 +15,12 @@ int valikko(void){
 	Tuote *tuoteLista;
 	lueNimikkeet("tuotetiedosto.txt", &tuoteLista);
 	Tuote *tuoteiter = tuoteLista;
-	
 	while (true){
 	
 		//tölkien ja pullojen määrä tiedostosta tähän ja niiden pohjalta toinen valikko.
 		int i = 1;
 		printf("\nSyötä uusi pullo tai tölkki.\n");
-		while (true){
+		while (tuoteiter != NULL){
 			printf("%d) %s %fl", i, tuoteiter->nimike, tuoteiter->koko);//jotain
 			i++;
 			tuoteiter = tuoteiter->pSeuraava;
