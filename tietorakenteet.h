@@ -21,4 +21,4 @@ void vapautaTuotteet(Tuote *p);
 void vapautaPalautukset(Palautus *p);
 #endif
 
-/* eof */
+// eof
