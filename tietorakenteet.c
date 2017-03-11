@@ -4,13 +4,11 @@
 #include <string.h>
 #include "tietorakenteet.h"
 
-
-
-int lisaaTuote(Tuote **alku, float tArvo, float tKoko, char *puskuri){
-	Tuote * uusi;
+int lisaaTuote(struct tuote **alku, float tArvo, float tKoko, char *puskuri){
+	struct tuote * uusi;
 	int merkkeja = 0;
 
-	if(uusi = (Tuote*)malloc(sizeof(Tuote))){
+	if(uusi = (struct tuote*)malloc(sizeof(struct tuote))){
 		merkkeja = strlen(puskuri);
 
 		if(uusi->nimike = (char*)malloc((merkkeja+1)*sizeof(char))){
@@ -20,10 +18,12 @@ int lisaaTuote(Tuote **alku, float tArvo, float tKoko, char *puskuri){
 			uusi->pSeuraava = NULL;
 
 			if(*alku == NULL){
+				printf("fdhsui\n");
 				*alku = uusi;
 			}else{
-				Tuote * tilapainen = *alku;
-				while(tilapainen->pSeuraava){
+				struct tuote * tilapainen = *alku;
+				while(tilapainen->pSeuraava != NULL){
+					printf("a");
 					tilapainen = tilapainen->pSeuraava;
 				}
 				tilapainen->pSeuraava = uusi;
@@ -37,10 +37,10 @@ int lisaaTuote(Tuote **alku, float tArvo, float tKoko, char *puskuri){
 	}
 }
 
-int lisaaPalautus(Palautus **alku, Tuote *tuote, char *puskuri){
-	Palautus * uusi;
+int lisaaPalautus(struct palautus **alku, struct tuote *tuote, char *puskuri){
+	struct palautus * uusi;
 	int merkkeja = 0;
-	if(uusi = (Palautus *)malloc(sizeof(Palautus))){
+	if(uusi = (struct palautus *)malloc(sizeof(struct palautus))){
 		merkkeja = strlen(puskuri);
 			
 		if(uusi->aikaleima = (char*)malloc((merkkeja+1)*sizeof(char))){
@@ -51,7 +51,7 @@ int lisaaPalautus(Palautus **alku, Tuote *tuote, char *puskuri){
 			if(*alku == NULL){
 				*alku = uusi;
 			}else{
-				Palautus * tilapainen = *alku;
+				struct palautus * tilapainen = *alku;
 				while(tilapainen->pSeuraava){
 					tilapainen = tilapainen->pSeuraava;
 				}
@@ -66,9 +66,9 @@ int lisaaPalautus(Palautus **alku, Tuote *tuote, char *puskuri){
 	}
 }
 
-void vapautaTuotteet(Tuote *p){
-	Tuote *nykyinen;
-	Tuote *tilapainen = p;
+void vapautaTuotteet(struct tuote *p){
+	struct tuote *nykyinen;
+	struct tuote *tilapainen = p;
 
 	while(tilapainen){
 		nykyinen = tilapainen;
@@ -77,9 +77,9 @@ void vapautaTuotteet(Tuote *p){
 	}
 }
 
-void vapautaPalautukset(Palautus *p){
-	Palautus *nykyinen;
-	Palautus *tilapainen = p;
+void vapautaPalautukset(struct palautus *p){
+	struct palautus *nykyinen;
+	struct palautus *tilapainen = p;
 
 	while(tilapainen){
 		nykyinen = tilapainen;

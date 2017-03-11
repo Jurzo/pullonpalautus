@@ -2,8 +2,8 @@
 
 #include <stdio.h>
 
-#include "tiedosto.h"
 #include "tietorakenteet.h"
+#include "tiedosto.h"
 #include "apufunktiot.h"
 
 #define true 1
@@ -11,11 +11,10 @@
 
 //toinen valikko, jossa on valittavana tölkit ja pullot
 int valikko(void){
-
 	//Listan lukeminen
-	Tuote *tuoteLista;
+	struct tuote *tuoteLista = NULL;
 	lueNimikkeet("tuotetiedosto.txt", &tuoteLista);
-	Tuote *tuoteiter = tuoteLista;
+	struct tuote *tuoteiter = tuoteLista;
 	while (true){
 	
 		//tölkien ja pullojen määrä tiedostosta ja niiden pohjalta toinen valikko.

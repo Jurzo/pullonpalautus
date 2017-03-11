@@ -2,7 +2,7 @@
 
 #ifndef TIEDOSTO_H
 #define TIEDOSTO_H
-int lueNimikkeet(char *, Tuote **);
-int kirjoitaTilapainenLoki(char *, Palautus *);
-int kirjoitaLoki(char *tiedostonimi, Palautus *alku);
+int lueNimikkeet(char *, struct tuote **);
+int kirjoitaTilapainenLoki(char *, struct palautus *);
+int kirjoitaLoki(char *tiedostonimi, struct palautus *alku);
 #endif

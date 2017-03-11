@@ -2,5 +2,5 @@
 
 #ifndef APUFUNKTIOT_H
 #define APUFUNKTIOT_H
-int aikaleimat(void);
+char *aikaleimat(void);
 #endif
