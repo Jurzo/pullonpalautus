@@ -24,7 +24,9 @@ int lueNimikkeet(char *tiedostonimi, Tuote **alku) {
 int kirjoitaTilapainenLoki(char *tiedostonimi, Palautus *alku) {
 	FILE *tiedosto = fopen(tiedostonimi, "w");
 	while (alku != NULL) {
-		fprintf(tiedosto, "%s:%s-%.2fl:%.2f€.\n");
+		pTuote = alku->pTuote;
+		fprintf(tiedosto, "%s:%s-%.2fl:%.2f€.\n", alku->aikaleima, pTuote->nimike, pTuote->koko, pTuote->arvo);
+		alku = alku->pSeuraava;
 	}
 	fclosse(tiedosto);
 }
