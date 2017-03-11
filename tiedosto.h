@@ -1,0 +1,1 @@
+int lueNimikkeet(char *, Tuote);
