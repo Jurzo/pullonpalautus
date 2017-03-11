@@ -1,6 +1,7 @@
+//Nimet: Mika Kopsa 0507014, Juuso Kalliomäki 0457960, Mikko Jutila 0447734
+
 #include <stdlib.h>
 #include <string.h>
-#include <stdio.h>
 #include "tietorakenteet.h"
 
 
@@ -85,31 +86,6 @@ void vapautaPalautukset(Palautus *p){
 		tilapainen = nykyinen->pSeuraava;
 		free(nykyinen);
 	}
-}
-
-
-
-int main(){
-	char testi[10] = "moi";
-	char testi1[10] = "hoi";
-	Tuote *alku = NULL;
-	Palautus *alkuP = NULL;
-	printf("%p\n", alku);
-	if(lisaaTuote(&alku, 1.0, 2.0,testi)){
-		printf("hei\n");
-	}
-	if(lisaaTuote(&alku, 1.0, 2.0,testi1)){
-		printf("hei\n");
-	}
-	if(lisaaPalautus(&alkuP, alku, testi)){
-		printf("jiihaa\n");
-	}
-	if(lisaaPalautus(&alkuP, alku->pSeuraava, testi)){
-		printf("jiihaa2\n");
-	}
-	printf("%s\n", alkuP->pSeuraava->aikaleima);
-	vapautaTuotteet(alku);
-	vapautaPalautukset(alkuP);
 }
 
 
