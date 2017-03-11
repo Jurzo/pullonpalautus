@@ -18,7 +18,7 @@ int aika(void){
 	if (c_time_string == NULL){
 		(void) fprintf(stderr, "Ajan muutos epäonnistui.\n");
 		}
-	return current_time;
+	return c_time_string;
 		
 	
 }
