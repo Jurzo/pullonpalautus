@@ -8,11 +8,27 @@
 #define true 1
 #define false 0
 
-int main (void){
+
+int valikko(void){
 
 	//Listan lukeminen
-	//Tuote *tuoteLista;
-	//lueNimikkeet("tuotetiedosto.txt", &tuoteLista);
+	Tuote *tuoteLista;
+	lueNimikkeet("tuotetiedosto.txt", &tuoteLista);
+	
+	while (true){
+	
+		//tölkien ja pullojen määrä tiedostosta tähän ja niiden pohjalta toinen valikko.
+		int i;
+		printf("\nSyötä uusi pullo tai tölkki.\n");
+		for (){
+			printf("%d) %s %fl", i, ?, ?);//jotain
+			}
+		printf("Lopeta syöttö ja tulosta kuitti.");
+		}
+	}
+
+int main (void){
+
 
 	int valinta;
 	while (true){
@@ -31,14 +47,7 @@ int main (void){
 			continue;
 			}
 		if (valinta == 1){
-			//tölkien ja pullojen määrä tiedostosta tähän ja niiden pohjalta toinen valikko.
-			int i;
-			printf("\nSyötä uusi pullo tai tölkki.\n");
-			for (){
-				printf("%d) %s %fl", i, ?, ?);//jotain
-				}
-			printf("Lopeta syöttö ja tulosta kuitti.");
-			}
+			valikko(void);
 		
 		else if(valinta == 0){
 			printf("Suljetaan pullonpalautusautomaatti.\n");
