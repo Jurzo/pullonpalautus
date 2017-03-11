@@ -31,9 +31,13 @@ int main (void){
 			continue;
 			}
 		if (valinta == 1){
-			printf("\nSyötä uusi pullo tai tölkki.\n");
-			
 			//tölkien ja pullojen määrä tiedostosta tähän ja niiden pohjalta toinen valikko.
+			int i;
+			printf("\nSyötä uusi pullo tai tölkki.\n");
+			for (){
+				printf("%d) %s %fl", i, ?, ?);//jotain
+				}
+			printf("Lopeta syöttö ja tulosta kuitti.");
 			}
 		
 		else if(valinta == 0){
