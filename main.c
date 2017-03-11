@@ -1,4 +1,4 @@
-//Nimet: Mika Kopsa 0507014, Juuso Kalliomäki 0457960, Mikko Jutila 0447734
+//Mika Kopsa 0507014, Juuso Kalliomäki 0457960, Mikko Jutila 0447734
 
 #include <stdio.h>
 
@@ -9,7 +9,7 @@
 #define true 1
 #define false 0
 
-//toinen valikko
+//toinen valikko, jossa on valittavana tölkit ja pullot
 int valikko(void){
 
 	//Listan lukeminen
