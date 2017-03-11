@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
-#include "tietorakenteet.h"
 
 typedef struct tuote {
 	float koko;
@@ -13,7 +12,6 @@ typedef struct tuote {
 typedef struct palautus {
 	char *aikaleima;
 	struct tuote *pTuote;
-	int maara;
 	struct palautus *pSeuraava;
 } Palautus;
 
@@ -32,7 +30,6 @@ int lisaaTuote(Tuote **alku, float tArvo, float tKoko, char *puskuri){
 
 			if(*alku == NULL){
 				*alku = uusi;
-				printf("%f\n", uusi->koko);
 			}else{
 				Tuote * tilapainen = *alku;
 				while(tilapainen->pSeuraava){
@@ -50,55 +47,54 @@ int lisaaTuote(Tuote **alku, float tArvo, float tKoko, char *puskuri){
 }
 
 int lisaaPalautus(Palautus **alku, Tuote *tuote, char *puskuri){
-	if(*alku){
-		Palautus * tilapainen = *alku;
-		while(tilapainen){
-			if(tilapainen->pTuote == tuote){
-				tilapainen->maara += 1;
-				return 1;
-			}
-			tilapainen = tilapainen->pSeuraava;
-		}
-		return 0;
-	}else{
-		Palautus * uusi;
-		int merkkeja = 0;
-
-		if(uusi = (Palautus *)malloc(sizeof(Palautus))){
-			merkkeja = strlen(puskuri);
+	Palautus * uusi;
+	int merkkeja = 0;
+	if(uusi = (Palautus *)malloc(sizeof(Palautus))){
+		merkkeja = strlen(puskuri);
 			
-			if(uusi->aikaleima = (char*)malloc((merkkeja+1)*sizeof(char))){
-				strcpy(uusi->aikaleima,puskuri);
-				uusi->maara = 1;
-				uusi->pTuote = tuote;
-				uusi->pSeuraava = NULL;
+		if(uusi->aikaleima = (char*)malloc((merkkeja+1)*sizeof(char))){
+			strcpy(uusi->aikaleima,puskuri);
+			uusi->pTuote = tuote;
+			uusi->pSeuraava = NULL;
+
+			if(*alku == NULL){
 				*alku = uusi;
-				return 1;
 			}else{
-				return 0;
+				Palautus * tilapainen = *alku;
+				while(tilapainen->pSeuraava){
+					tilapainen = tilapainen->pSeuraava;
+				}
+				tilapainen->pSeuraava = uusi;
 			}
+			return 1;
 		}else{
 			return 0;
 		}
+	}else{
+		return 0;
 	}
-	
 }
+
 
 int main(){
 	char testi[10] = "moi";
+	char testi1[10] = "hoi";
 	Tuote *alku = NULL;
 	Palautus *alkuP = NULL;
 	printf("%p\n", alku);
 	if(lisaaTuote(&alku, 1.0, 2.0,testi)){
 		printf("hei\n");
-	};
+	}
+	if(lisaaTuote(&alku, 1.0, 2.0,testi1)){
+		printf("hei\n");
+	}
 	if(lisaaPalautus(&alkuP, alku, testi)){
 		printf("jiihaa\n");
 	}
-	if(lisaaPalautus(&alkuP, alku, testi)){
+	if(lisaaPalautus(&alkuP, alku->pSeuraava, testi)){
 		printf("jiihaa2\n");
 	}
-	printf("%s\n", alkuP->aikaleima);
+	printf("%s\n", alkuP->pSeuraava->aikaleima);
 }
 
 
