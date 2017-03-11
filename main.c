@@ -22,7 +22,7 @@ int valikko(void){
 		int i = 1;
 		printf("\nSyötä uusi pullo tai tölkki.\n");
 		while (tuoteiter != NULL){
-			printf("%d) %s %fl", i, tuoteiter->nimike, tuoteiter->koko);//jotain
+			printf("%d) %s %fl", i, tuoteiter->nimike, tuoteiter->koko);
 			i++;
 			tuoteiter = tuoteiter->pSeuraava;
 			}
