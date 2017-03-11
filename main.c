@@ -26,7 +26,7 @@ int valikko(void){
 			tuoteiter = tuoteiter->pSeuraava;
 			}
 		printf("%d) Lopeta syöttö ja tulosta kuitti.",i);
-		//kuitin tulostus
+		//kuitin tulostusfunktio tähän
 		}
 	}
 
