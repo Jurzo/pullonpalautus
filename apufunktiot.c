@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int aika(void){
+int aikaleimat(void){
 	time_t current_time;
 	char* c_time_string;
 	
